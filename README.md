@@ -1,3 +1,24 @@
+```bash
+pip install -r requirements.txt
+huggingface-cli download ZJYang/AniPortrait --local-dir=./pretrained_model
+
+huggingface-cli download runwayml/stable-diffusion-v1-5 --local-dir=./pretrained_model/stable-diffusion-v1-5
+huggingface-cli download facebook/wav2vec2-base-960h
+huggingface-cli download stabilityai/sd-vae-ft-mse --local-dir=./pretrained_model/sd-vae-ft-mse
+
+
+
+
+mkdir -p ./pretrained_model/image_encoder
+huggingface-cli download lambdalabs/sd-image-variations-diffusers image_encoder/config.json image_encoder/pytorch_model.bin --local-dir=./pretrained_model
+
+
+mkdir -p ./pretrained_model/stable-diffusion-v1-5
+huggingface-cli download runwayml/stable-diffusion-v1-5 feature_extractor/preprocessor_config.json model_index.json unet/config.json unet/diffusion_pytorch_model.bin v1-inference.yaml --local-dir=./pretrained_model/stable-diffusion-v1-5
+
+```
+
+
 # AniPortrait
 
 **AniPortrait: Audio-Driven Synthesis of Photorealistic Portrait Animations**
